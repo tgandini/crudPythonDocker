@@ -12,7 +12,6 @@ class Producto(Base):
     nombre = Column(String(50))
     descripcion = Column(String)
     cantidad = Column(Integer)
-    extra = Column(Boolean)
 
     def __repr__(self):
         return f"Id: {self.id}. Nombre: {self.nombre} || Descripción: {self.descripcion}"
