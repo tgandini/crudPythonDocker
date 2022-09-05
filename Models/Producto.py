@@ -14,11 +14,12 @@ class Producto(Base):
     cantidad = Column(Integer)
 
     def __repr__(self):
-        return f"Id: {self.id}. Nombre: {self.nombre} || Descripción: {self.descripcion}"
+        return f"Id: {self.id} || Nombre: {self.nombre} || Descripción: {self.descripcion}"
 
     def getCantidad(self):
         return self.cantidad
 
-    def __init__(self, nombre, descripcion):
+    def __init__(self, nombre, descripcion, cantidad):
         self.nombre = nombre
         self.descripcion = descripcion
+        self.cantidad = cantidad
