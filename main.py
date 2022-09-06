@@ -24,3 +24,17 @@ def findProductoByName(nombreProducto):
                 print (producto)
     except Exception as e:
         print("Ha ocurrido un error: "+str(e))    
+
+def eliminarProductoById(idProducto):
+    try:
+        with Session(engine) as session:
+            producto= session.query(Producto).filter(Producto.id==idProducto).first()
+            nombreDelProducto= producto.nombre
+            session.delete(producto)
+            session.commit()
+            print (f'El producto "{nombreDelProducto}" ha sido eliminado')
+    except Exception as e:
+        print("Ha ocurrido un error: "+str(e))
+
+
+
